@@ -1,1 +1,98 @@
-<p>edit-gun works!</p>
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h1 class="h2">Edit Gun Details</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <div class="btn-group">
+      <button class="btn btn-sm btn-outline-secondary" (click)="goBack()">
+        Go Back
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+      <div class="pricing-header form-block mx-auto">
+        <form [formGroup]="editForm" (ngSubmit)="updateForm()" novalidate>
+          <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label>Owner Name</label>
+                        <input
+                            type="text"
+                            formControlName="ownerName"
+                            class="form-control"
+                            required
+                        />
+                        <p *ngIf="ownerName?.touched && ownerName?.invalid" class="error">
+                            <sup>*</sup>Invalid field
+                        </p>
+                        <p *ngIf="ownerName?.errors?.['minLength']" class="error">
+                            <sup>*</sup>Field needs to be longer than 2 characters
+                        </p>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Email</label>
+                        <input
+                            type="text" 
+                            formControlName="emailAddress" 
+                            class="form-control"
+                            required/>
+                        <p *ngIf="emailAddress?.touched && emailAddress?.invalid" class="error">
+                         <sup>*</sup>Please provide email
+                        </p>
+                        <p *ngIf="emailAddress?.errors?.['pattern']" class="error">
+                         <sup>*</sup>Please enter correct email
+                        </p>    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label>Address</label>
+                        <input type="text" formControlName="address" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Phone Number</label>
+                        <input type="text" formControlName="phoneNumber" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label>Make</label>
+                        <input type="text" formControlName="make" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Type</label>
+                        <input type="text" formControlName="type" class="form-control">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <label>Serial Number</label>
+                        <input type="text" formControlName="type" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Log Number</label>
+                        <input type="text" formControlName="type" class="form-control">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Days Stored</label>
+                        <input type="number" formControlName="type" class="form-control">
+                    </div>
+                    <div class="form-group text-right">
+                        <button
+                          type="submit"
+                          class="btn btn-success btn-block"
+                          [disabled]="!editForm.valid"
+                        >
+                          Update Gun
+                        </button>
+                      </div> 
+                </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
