@@ -1,0 +1,68 @@
+<div
+  class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+>
+  <h2 class="h2">Firearms List</h2>
+  <a
+    routerLink="/add-gun"
+    class="btn btn-success"
+    *ngIf="hideWhenNoGun"
+  >
+    Add Gun
+  </a>
+</div>
+<div class="pricing-header mx-auto">
+    <div class="no-data text-center" *ngIf="noData">
+        <p class="nodata-msg">No gun added yet!</p>
+        <a routerLink="/add-gun" class="btn btn-success"> Add Student </a>
+      </div>
+      <div class="table-responsive" *ngIf="hideWhenNoGun">
+        <table
+          class="table table-bordered table-responsive-sm table-responsive-md table-responsive-lg"
+        >
+          <thead>
+            <tr>
+              <th scope="col">Log Number</th>
+              <th scope="col">Owner Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mobile number</th>
+              <th scope="col">Type</th>
+              <th scope="col">Make</th>
+              <th scope="col">Serial Number</th>
+              <th scope="col">Days Stored</th>
+              <th class="text-center" scope="col">Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let gun of Guns
+                  | paginate: { itemsPerPage: 8, currentPage: p };
+                let i = index
+              "
+            >
+              <th scope="row">{{ gun.logNumber }}</th>
+              <td>{{ gun.ownerName }}</td>
+              <td>{{ gun.emailAddress }}</td>
+              <td>{{ gun.phoneNumber }}</td>
+              <td>{{ gun.type }}</td>
+              <td>{{ gun.make }}</td>
+              <td>{{ gun.serialNumber }}</td>
+              <td>{{ gun.dayStored }}</td>
+              <td class="text-center action-block">
+                <span
+                  class="mr-2 btn btn-outline-primary btn-sm"
+                  routerLink="/edit-gun/{{ gun.$key }}"
+                  >Edit</span
+                >
+                <span
+                  class="btn btn-outline-danger btn-sm"
+                  (click)="deleteGun(gun)"
+                  >Delete</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
