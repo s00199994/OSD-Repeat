@@ -1,7 +1,7 @@
 import * as functions from "firebase-functions";
 
 const admin = require('firebase-admin');
-admin.initializeApp();
+admin.initializeApp(functions.config().firebase);
 const cors = require('cors')({ origin: true});
 
 const db = admin.database().ref('/osd-repeat');

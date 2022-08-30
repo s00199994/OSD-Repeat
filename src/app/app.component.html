@@ -14,8 +14,10 @@
     appId: "1:489019813758:web:bb6f4a7db19a2e0e698d2f"
   };
 
+  const functions = require('firebase-functions');
+  const admin = require('firebase-admin');
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  admin.initializeApp(firebaseConfig);
 </script>
 
 <app-home></app-home>
