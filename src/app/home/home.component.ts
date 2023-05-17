@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Gun } from '../interfaces/gun';
 import { StorageService } from 'src/services/storage.service';
 
@@ -9,7 +9,7 @@ import { StorageService } from 'src/services/storage.service';
 })
 export class HomeComponent {
 
-  showForm: boolean = false;
+  @Input() showForm: boolean = false;
 
   guns: Gun[] = [];
 

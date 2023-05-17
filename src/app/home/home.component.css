@@ -1,11 +1,9 @@
-.location {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: cadetblue;
-    padding-left: 1%;
+.right {
+    float: right;
+    margin-right: 3em;
+    margin-top: .25em;
 }
 
-.button-top {
-    background-color: greenyellow;
-    margin: auto;
-    padding: 0;
+.banner {
+    background-color: darkgray;
 }

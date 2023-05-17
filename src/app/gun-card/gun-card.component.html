@@ -1,8 +1,39 @@
 <div class="card">
-    <div class="card-header">{{ gun.logNumber }}</div>
+    <div class="card-header"><strong>{{ gun.logNumber }}</strong></div>
     <div class="card-body">
+      <p><strong>Owner:</strong> {{ gun.owner }}</p>
       <p><strong>Serial Number:</strong> {{ gun.serialNumber }}</p>
       <p><strong>Type:</strong> {{ gun.type }}</p>
       <p><strong>Make:</strong> {{ gun.make }}</p>
+      <p><strong>Model:</strong> {{ gun.model }}</p>
+    <div class="btn-group">
+      <button class="btn btn-danger" (click)="deleteGun(gun)">Delete</button>
+      <button class="btn btn-info" (click)="editGun()">Edit</button>
+    </div>
+    </div>
+    <div class="form" *ngIf="editForm">
+      <form>
+        <div class="form-group">
+          <label for="owner">Owner:</label>
+          <input class="form-control" type="text" name="owner" [(ngModel)]="gun.owner" id="owner" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <label for="serialNumber">Serial Number:</label>
+          <input class="form-control" type="text" name="serialNumber" [(ngModel)]="gun.serialNumber" id="serialNumber" placeholder="XXXXXX">
+        </div>
+        <div class="form-group">
+          <label for="type">Type:</label>
+          <input class="form-control" type="text" name="type" [(ngModel)]="gun.type" id="type" placeholder="Rifle, Shotgun etc.">
+        </div>
+        <div class="form-group">
+          <label for="make">Make:</label>
+          <input class="form-control" type="text" name="logNumber" [(ngModel)]="gun.make" id="make" placeholder="E.g. Ruger">
+        </div>
+        <div class="form-group">
+          <label for="model">Model:</label>
+          <input class="form-control" type="text" name="model" [(ngModel)]="gun.model" id="model" placeholder="E.g. Predator">
+        </div>
+      </form>
+      <button class="btn btn-primary boundary" (click)="updateGun(gun)">Update Firearm</button>
     </div>
   </div>

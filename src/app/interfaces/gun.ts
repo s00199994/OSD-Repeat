@@ -1,4 +1,5 @@
 export interface Gun {
+    id: String;
     logNumber: Number,
     serialNumber: String,
     owner: String,

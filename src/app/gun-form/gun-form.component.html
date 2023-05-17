@@ -1,29 +1,33 @@
-<div class="addForm">
-    <h2>Add Gun</h2>
-    <form>
-      <div class="form_content">
+<div class="border rounded">
+    <button class="btn-close right" (click)="closeForm()"></button>
+    <h2 class="h2 text-center">Add Gun</h2>
+    <form class="boundary">
+      <div class="form-group">
         <label for="logNumber">Log Number:</label>
-        <input type="text" name="logNumber" [(ngModel)]="gun.logNumber" id="logNumber">
+        <input class="form-control" type="text" name="logNumber" [(ngModel)]="gun.logNumber" id="logNumber" placeholder="XXXX">
       </div>
-      <div class="form_content">
+      <div class="form-group">
         <label for="owner">Owner:</label>
-        <input type="text" name="owner" [(ngModel)]="gun.owner" id="owner">
+        <input class="form-control" type="text" name="owner" [(ngModel)]="gun.owner" id="owner" placeholder="Name">
       </div>
-      <div class="form_content">
+      <div class="form-group">
         <label for="serialNumber">Serial Number:</label>
-        <input type="text" name="serialNumber" [(ngModel)]="gun.serialNumber" id="serialNumber">
+        <input class="form-control" type="text" name="serialNumber" [(ngModel)]="gun.serialNumber" id="serialNumber" placeholder="XXXXXX">
       </div>
-      <div class="form_content">
+      <div class="form-group">
         <label for="type">Type:</label>
-        <input type="text" name="type" [(ngModel)]="gun.type" id="type">
+        <input class="form-control" type="text" name="type" [(ngModel)]="gun.type" id="type" placeholder="Rifle, Shotgun etc.">
       </div>
-      <div class="form_content">
-        <label for="logNumber">Make:</label>
-        <input type="text" name="logNumber" [(ngModel)]="gun.make" id="make">
+      <div class="form-group">
+        <label for="make">Make:</label>
+        <input class="form-control" type="text" name="logNumber" [(ngModel)]="gun.make" id="make" placeholder="E.g. Ruger">
       </div>
-      <div class="form_content">
-        <label for="type">Model:</label>
-        <input type="text" name="model" [(ngModel)]="gun.model" id="model">
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input class="form-control" type="text" name="model" [(ngModel)]="gun.model" id="model" placeholder="E.g. Predator">
       </div>
     </form>
+    <div class="text-center">
+    <button class="btn btn-primary" (click)="addFirearm()">Add to Store</button>
+    </div>
   </div>

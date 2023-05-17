@@ -1,8 +1,24 @@
-.topbar {
-    margin: 0;
-    grid-template: 1fr 1fr 1fr;
+.top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     background-color: green;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.title {
+    margin-left: 1%;
+}
+
+.right-top {
+    grid-column: 3;
+    margin: auto;
+}
+
+.top-buttons {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: aqua;
 }
