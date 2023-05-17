@@ -1,0 +1,11 @@
+.location {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: cadetblue;
+    padding-left: 1%;
+}
+
+.button-top {
+    background-color: greenyellow;
+    margin: auto;
+    padding: 0;
+}
