@@ -1,0 +1,19 @@
+.addForm {
+    text-align: center;
+    border: 2px solid;
+    border-color: blue;
+    margin: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.form_content {
+    padding: 1%;
+}
+
+.form_buttons {
+    padding: .75%;
+    margin: 1%;
+    background-color: rgb(56, 136, 240);
+    border-radius: 5px;
+}

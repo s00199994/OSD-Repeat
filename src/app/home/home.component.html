@@ -1,0 +1,11 @@
+<div class="button-top">
+    <button (click)="showForm = true">Add Gun</button>
+    <button (click)="showForm = false">Close Form</button>
+    </div>
+    <ng-container *ngIf="showForm">
+        <app-gun-form></app-gun-form>
+    </ng-container>
+    <div class="card-list">
+        <h1 class="location">Locker 1:</h1>
+        <app-gun-card *ngFor="let gun of guns" [gun]="gun"></app-gun-card>
+    </div>
