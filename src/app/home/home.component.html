@@ -1,10 +1,10 @@
 <div class="banner">
     <button class="btn btn-primary right" (click)="showForm = true">Add Gun</button>
-    <h1 class="h1">Contents of Gun Store:</h1>
+    <h1 class="h1 left">Contents of Gun Store:</h1>
 </div>
 <ng-container *ngIf="showForm">
     <app-gun-form [showForm]="showForm" (formClose)="showForm = $event"></app-gun-form>
 </ng-container>
-<div class="card">
+<div class="col-md-6 centred">
     <app-gun-card *ngFor="let gun of guns" [gun]="gun"></app-gun-card>
 </div>

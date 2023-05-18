@@ -7,3 +7,11 @@
 .banner {
     background-color: darkgray;
 }
+
+.centred {
+    margin: auto;
+}
+
+.left {
+    margin-left: .5%;
+}
