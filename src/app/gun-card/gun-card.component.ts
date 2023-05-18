@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Gun } from '../interfaces/gun';
-import { Subject } from 'rxjs';
 import { StorageService } from 'src/services/storage.service';
-import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-gun-card',
@@ -15,7 +13,7 @@ export class GunCardComponent {
 
   editForm: boolean = false;
 
-  constructor(private storageService: StorageService, private router: Router) { }
+  constructor(private storageService: StorageService) { }
 
   deleteGun(gun: Gun) {
     this.storageService.deleteFirearm(this.gun).subscribe(
