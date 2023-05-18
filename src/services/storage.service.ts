@@ -8,7 +8,7 @@ import { Observable, map } from 'rxjs';
 })
 export class StorageService {
 
-  endpoint = 'http://firearm-storage-app.herokuapp.com/firearms';
+  endpoint = 'https://firearm-storage-app.herokuapp.com/firearms';
 
   constructor(private http: HttpClient) { }
 
